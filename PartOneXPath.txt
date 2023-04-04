@@ -1,0 +1,13 @@
+Question 1:
+/library/book[*]		
+question 2:
+/library/book[@type='roman']/title
+question 3:
+count(/library/book[@type='bd'])
+question 4:
+<library>
+		<book type="roman">
+			<title>toto5</title>
+			<author>titi</author>
+		</book>
+	</library>
