@@ -22,14 +22,14 @@ public class PersonneController : ControllerBase
     {
         var result = await _handler.AddPersonne(personneItem);
 
-        return result ? CreatedAtAction(nameof(Personne), personneItem) :
+        return result ? Ok() :
             BadRequest("Personne not valid");
     }
 
-    [HttpPost(Name = "GetPersonnes")]
-    public async Task<ActionResult<IEnumerable<GetPersonnesDto>>> GetPersonneItems()
+    [HttpGet(Name = "GetPersonnes")]
+    public ActionResult<IEnumerable<GetPersonnesDto>> GetPersonneItems()
     {
-        var result = await _handler.GetPersonnes();
+        var result = _handler.GetPersonnes();
 
         return Ok(result);
     }
