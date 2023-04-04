@@ -44,6 +44,6 @@ public class PersonneHandler : IPersonneHandler
 
     private bool HasValidAge(DateTime age)
     {
-        return age.Year - DateTime.Now.Year < 150;
+        return DateTime.Now.Year - age.Year < 150;
     }
 }
